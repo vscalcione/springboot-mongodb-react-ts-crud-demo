@@ -27,5 +27,6 @@ To compile the frontend module, made with React + Typescript support and Materia
 ```bash
 $ cd react-ts-material-ui-crud-demo
 $ npm install
+$ npm run start:json-server (to run json-server with fake data because Java backend cannot deployed in some cloud platforms)
 $ npm start
 ```
