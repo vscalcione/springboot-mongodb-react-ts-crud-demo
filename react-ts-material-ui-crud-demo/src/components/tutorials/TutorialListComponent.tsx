@@ -1,11 +1,15 @@
 import React, { Component, ChangeEvent} from 'react';
-import { Link } from 'react-router-dom';
+import { Switch, Route, Link } from 'react-router-dom';
 
 import TutorialDataService from '../../services/tutorial.service';
 import ITutorialData from '../../types/tutorial.type';
 
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
+
+import SearchIcon from '@material-ui/icons/Search';
+import AddCircleIcon from '@material-ui/icons/AddCircle';
+import RemoveCircleIcon from '@material-ui/icons/RemoveCircle';
 
 type Props = {};
 type State = {
@@ -113,14 +117,27 @@ export default class TutorialListComponent extends Component<Props, State> {
                   value={searchTitle}
                   onChange={this.onChangeSearchTitle}
                 />
+                
                 <Button
                     variant="contained"
                     color="primary"
                     onClick={this.searchTitle}
                     style={{ marginTop: "3px", marginLeft: "7px", height: "50px", borderRadius: "5px" }}
                 >
-                  Search
-                </Button>                
+                  <SearchIcon />
+                  &nbsp; Search
+                </Button>
+
+                <Button
+                    variant="contained"
+                    color="primary"
+                    onClick={this.searchTitle}
+                    style={{ marginTop: "3px", marginLeft: "75px", width: "100px", height: "50px", borderRadius: "5px" }}
+                >
+                  <AddCircleIcon />
+                  &nbsp; Add
+                </Button>  
+     
               </div>
             </div>
             <div className="col-md-6">
@@ -141,13 +158,14 @@ export default class TutorialListComponent extends Component<Props, State> {
                     </li>
                   ))}
               </ul>
-
+              
               <Button
                 variant="contained"
                 color="secondary"
                 onClick={this.removeAllTutorials}
               >
-                Remove All
+                <RemoveCircleIcon /> 
+                &nbsp; Remove All
               </Button> 
             </div>
             <div className="col-md-6">
@@ -188,6 +206,7 @@ export default class TutorialListComponent extends Component<Props, State> {
               )}
             </div>
           </div>
+          
         );
     }
 }
