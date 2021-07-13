@@ -1,0 +1,16 @@
+CREATE TABLE users IF NOT EXISTS (
+	id INT NOT NULL PRIMARY KEY
+	first_name VARCHAR(255) NOT NULL
+	last_name VARCHAR(255) NOT NULL
+	username VARCHAR(255) NOT NULL
+	email VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE tutorials IF NOT EXISTS(
+	id INT NOT NULL PRIMARY KEY
+	title VARCHAR(255) NOT NULL
+	description VARCHAR(255) NOT NULL
+	is_published BIT(1) NOT NULL
+	user_assigned INT NOT NULL
+	FOREIGN KEY (user_assigned) REFERENCES users(id)
+);
