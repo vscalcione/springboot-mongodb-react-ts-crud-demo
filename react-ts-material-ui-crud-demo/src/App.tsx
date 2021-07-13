@@ -17,6 +17,7 @@ import SearchIcon from '@material-ui/icons/Search';
 
 import TutorialComponent from './components/TutorialComponent';
 import AddTutorialComponent from './components/AddTutorialComponent';
+import TutorialListComponent from './components/TutorialListComponent';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -124,19 +125,11 @@ export default function App () {
         </AppBar>
 
         <Switch>
-          <Route exact path={["/", "/tutorials"]} component={TutorialComponent} />
-          <Route exact path={["/add"]} component={AddTutorialComponent} />
+          <Route exact path={["/", "/tutorials"]} component={TutorialListComponent} />
+          <Route exact path="/add" component={AddTutorialComponent} />
+          <Route path="/tutorials/:id" component={TutorialComponent} />
         </Switch>
     </div>
-      /** 
-      <div>
-
-        <div className="container mt-3">
-          <Switch>
-            <Route exact path={["/", "/tutorials"]} component={TutorialComponent} />
-          </Switch>
-        </div>
-      </div>*/
     );
   //}
 };
