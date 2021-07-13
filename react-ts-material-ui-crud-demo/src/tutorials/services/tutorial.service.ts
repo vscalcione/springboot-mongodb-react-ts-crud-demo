@@ -1,4 +1,4 @@
-import http from './../http-common';
+import http from '../../http-common';
 import ITutorialData from '../types/tutorial.type';
 
 class TutorialDataService {

@@ -15,9 +15,9 @@ import { createStyles, alpha, Theme, makeStyles } from '@material-ui/core/styles
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
 
-import TutorialComponent from './components/TutorialComponent';
-import AddTutorialComponent from './components/AddTutorialComponent';
-import TutorialListComponent from './components/TutorialListComponent';
+import TutorialComponent from './tutorials/components/TutorialComponent';
+import AddTutorialComponent from './tutorials/components/AddTutorialComponent';
+import TutorialListComponent from './tutorials/components/TutorialListComponent';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
