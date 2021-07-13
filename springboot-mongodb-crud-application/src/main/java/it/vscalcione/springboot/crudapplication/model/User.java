@@ -1,79 +1,85 @@
 package it.vscalcione.springboot.crudapplication.model;
 
-import org.springframework.data.mongodb.core.mapping.Document;
+import java.io.Serializable;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-@Document(collection = "users")
-public class User {
+@Entity
+public class User implements Serializable {
 
-    @Id
-    private String id;
+	private static final long serialVersionUID = 1L;
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(nullable = false, updatable = false)
+	private Long id;
+	
+	private String firstName;
+	private String lastName;
+	private String username;
+	private String email;
+	
+	public User() {
+		
+	}
+	
+	public User(Long id, String firstName, String lastName, String username, String email) {
+		super();
+		this.id = id;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.username = username;
+		this.email = email;
+	}
 
-    private String firstName;
-    private String lastName;
-    private String username;
-    private String email;
+	public Long getId() {
+		return id;
+	}
 
-    public User() {
+	public void setId(Long id) {
+		this.id = id;
+	}
 
-    }
+	public String getFirstName() {
+		return firstName;
+	}
 
-    public User(String firstName, String lastName, String username, String email) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.username = username;
-        this.email = email;
-    }
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
 
-    public String getId() {
-        return id;
-    }
+	public String getLastName() {
+		return lastName;
+	}
 
-    public void setId(String id) {
-        this.id = id;
-    }
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
 
-    public String getFirstName() {
-        return firstName;
-    }
+	public String getUsername() {
+		return username;
+	}
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
+	public void setUsername(String username) {
+		this.username = username;
+	}
 
-    public String getLastName() {
-        return lastName;
-    }
+	public String getEmail() {
+		return email;
+	}
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
+	public void setEmail(String email) {
+		this.email = email;
+	}
 
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = this.email;
-    }
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "id='" + id + '\'' +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", username='" + username + '\'' +
-                ", email=" + email +
-                '}';
-    }
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", username=" + username
+				+ ", email=" + email + "]";
+	}
+	
 }

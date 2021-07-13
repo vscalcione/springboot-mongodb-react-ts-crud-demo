@@ -1,14 +1,14 @@
 package it.vscalcione.springboot.crudapplication.repository;
 
+import java.util.Optional;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
 import it.vscalcione.springboot.crudapplication.model.User;
-import org.springframework.data.mongodb.repository.MongoRepository;
 
-import java.util.List;
-
-public interface UserRepository extends MongoRepository<User, String> {
-    List<User> findByUsername(String username);
-    List<User> findByEmail(String email);
+public interface UserRepository extends JpaRepository<User, Long> {
+	
+	void deleteUserById(Long id);
+	Optional<User> findUserById(Long id);
+	
 }
-
-
-    
