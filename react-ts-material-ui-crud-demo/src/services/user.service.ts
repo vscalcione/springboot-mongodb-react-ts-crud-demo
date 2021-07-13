@@ -1,4 +1,4 @@
-import http from '../../http-common';
+import http from '../http-common';
 import IUserData from '../types/user.type';
 
 class UserDataService {

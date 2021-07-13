@@ -1,8 +1,8 @@
 import React, { Component, ChangeEvent} from 'react';
 import { Link } from 'react-router-dom';
 
-import TutorialDataService from '../services/tutorial.service';
-import ITutorialData from '../types/tutorial.type';
+import TutorialDataService from '../../services/tutorial.service';
+import ITutorialData from '../../types/tutorial.type';
 
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";

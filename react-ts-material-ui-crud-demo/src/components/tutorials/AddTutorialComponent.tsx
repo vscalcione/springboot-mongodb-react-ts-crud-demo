@@ -1,7 +1,7 @@
 import React, { Component, ChangeEvent } from "react";
 
-import ITutorialData from "../types/tutorial.type";
-import TutorialDataService from "../services/tutorial.service";
+import ITutorialData from '../../types/tutorial.type';
+import TutorialDataService from "../../services/tutorial.service";
 
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
