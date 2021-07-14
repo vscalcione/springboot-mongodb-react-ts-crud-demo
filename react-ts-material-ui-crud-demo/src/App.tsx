@@ -18,6 +18,7 @@ import SearchIcon from '@material-ui/icons/Search';
 import TutorialComponent from './components/tutorials/TutorialComponent';
 import AddTutorialComponent from './components/tutorials/AddTutorialComponent';
 import TutorialListComponent from './components/tutorials/TutorialListComponent';
+import UserListComponent from './components/users/UserListComponent';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -121,6 +122,16 @@ export default function App () {
                 Add
               </Link>
             </Button>
+
+            <Button
+              variant="contained"
+              color="default"
+              style={{ marginLeft: "15px", borderRadius: "10px" }}
+            >
+              <Link to={"/users"} className="">
+                Users
+              </Link>
+            </Button>
           </Toolbar>
         </AppBar>
 
@@ -128,6 +139,7 @@ export default function App () {
           <Route exact path={["/", "/tutorials"]} component={TutorialListComponent} />
           <Route exact path="/add" component={AddTutorialComponent} />
           <Route path="/tutorials/:id" component={TutorialComponent} />
+          <Route path="/users" component={UserListComponent} />
         </Switch>
     </div>
     );
