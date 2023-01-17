@@ -7,6 +7,7 @@
 ![openapi-logo](https://img.icons8.com/color/60/000000/cloud-function.png)
 ![postman-logo](https://img.icons8.com/dusk/60/000000/postman-api.png)
 ![mongodb-logo](https://img.icons8.com/color/60/000000/mongodb.png)
+![swagger-logo](https://avatars.githubusercontent.com/u/7658037?s=60&v=4)
 
 To compile the backend module, made with Java 8, Maven, SpringBoot, MongoDB and OpenAPI, you can run these commands:
 ```bash
